@@ -7,11 +7,11 @@ namespace App\Payment\Application\Dto;
 class PaymentProcessingResponseDto extends AbstractBaseDto
 {
     public function __construct(
-        public string $transactionId,
-        public string $createdAt,
-        public int    $amount,
-        public string $currency,
-        public string $cardBin
+        public readonly string $transactionId,
+        public readonly string $createdAt,
+        public readonly int    $amount,
+        public readonly string $currency,
+        public readonly string $cardBin
     )
     {
     }

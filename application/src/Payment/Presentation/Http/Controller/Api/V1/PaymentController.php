@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class PaymentController extends AbstractController
 {
-    public function __construct(private PaymentProcessingUseCase $paymentProcessingUseCase)
+    public function __construct(private readonly PaymentProcessingUseCase $paymentProcessingUseCase)
     {
 
     }

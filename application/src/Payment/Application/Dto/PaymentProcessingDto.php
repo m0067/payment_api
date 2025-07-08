@@ -9,29 +9,29 @@ use Symfony\Component\Validator\Constraints as Assert;
 class PaymentProcessingDto extends AbstractBaseDto
 {
     #[Assert\NotBlank]
-    public string $paymentGatewayName;
+    public readonly string $paymentGatewayName;
 
     #[Assert\NotBlank]
-    public int $amount;
+    public readonly int $amount;
 
     #[Assert\NotBlank]
-    public string $currency;
+    public readonly string $currency;
 
     #[Assert\NotBlank]
     #[Assert\Regex(pattern: '/^\d{13,19}$/', message: 'Card number must be 13-19 digits')]
-    public string $cardNumber;
+    public readonly string $cardNumber;
 
     #[Assert\NotBlank]
     #[Assert\Regex(pattern: '/^(0[1-9]|1[0-2])$/', message: 'Invalid month')]
-    public string $cardExpMonth;
+    public readonly string $cardExpMonth;
 
     #[Assert\NotBlank]
     #[Assert\Regex(pattern: '/^\d{4}$/', message: 'Invalid year')]
-    public string $cardExpYear;
+    public readonly string $cardExpYear;
 
     #[Assert\NotBlank]
     #[Assert\Regex(pattern: '/^\d{3,4}$/', message: 'CVV must be 3 or 4 digits')]
-    public string $cardCvv;
+    public readonly string $cardCvv;
 
     public function __construct(
         string $paymentGatewayName,

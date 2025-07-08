@@ -28,5 +28,5 @@ interface PaymentGatewayInterface
         string $cvv
     ): PaymentGatewayInfo;
 
-    public function getName(): string;
+    public static function getName(): string;
 }

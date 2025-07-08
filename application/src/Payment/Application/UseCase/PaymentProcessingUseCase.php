@@ -11,6 +11,7 @@ use App\Payment\Domain\Exception\PaymentValidationException;
 use App\Payment\Domain\Service\PaymentProcessor;
 use App\Payment\Domain\ValueObject\Money;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
+use Throwable;
 
 class PaymentProcessingUseCase
 {
@@ -21,8 +22,7 @@ class PaymentProcessingUseCase
     /**
      * @param PaymentProcessingDto $dto
      * @return PaymentProcessingResponseDto
-     * @throws PaymentGatewayException
-     * @throws PaymentValidationException
+     * @throws PaymentValidationException|PaymentGatewayException|Throwable
      */
     public function execute(PaymentProcessingDto $dto): PaymentProcessingResponseDto
     {

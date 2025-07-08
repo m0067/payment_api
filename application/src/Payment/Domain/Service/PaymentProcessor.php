@@ -18,9 +18,9 @@ use Throwable;
 class PaymentProcessor
 {
     public function __construct(
-        private PaymentGatewayFactory                 $paymentGatewayFactory,
-        private ValidatorInterface                    $validator,
-        private PaymentTransactionRepositoryInterface $paymentTransactionRepository
+        private readonly PaymentGatewayFactory                 $paymentGatewayFactory,
+        private readonly ValidatorInterface                    $validator,
+        private readonly PaymentTransactionRepositoryInterface $paymentTransactionRepository
     )
     {
     }

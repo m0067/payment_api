@@ -30,9 +30,4 @@ final class PaymentTransactionStatus
     {
         return $this->status;
     }
-
-    public function isPending(): bool
-    {
-        return $this->status === self::STATUS_PENDING;
-    }
 }

@@ -66,11 +66,11 @@ class AciPaymentGateway implements PaymentGatewayInterface
 
         return new PaymentGatewayInfo(
             $content['id'],
-            $this->getName()
+            self::getName()
         );
     }
 
-    public function getName(): string
+    public static function getName(): string
     {
         return 'aci';
     }

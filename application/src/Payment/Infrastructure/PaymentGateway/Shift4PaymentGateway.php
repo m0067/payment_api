@@ -88,11 +88,11 @@ class Shift4PaymentGateway implements PaymentGatewayInterface
 
         return new PaymentGatewayInfo(
             $chargeData['id'],
-            $this->getName()
+            self::getName()
         );
     }
 
-    public function getName(): string
+    public static function getName(): string
     {
         return 'shift4';
     }

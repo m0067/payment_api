@@ -23,8 +23,8 @@ class PaymentGatewayFactory implements PaymentGatewayFactoryInterface
     public function create(string $name): PaymentGatewayInterface
     {
         return match ($name) {
-            'shift4' => new Shift4PaymentGateway($this->httpClient),
-            'aci' => new AciPaymentGateway($this->httpClient),
+            Shift4PaymentGateway::getName() => new Shift4PaymentGateway($this->httpClient),
+            AciPaymentGateway::getName() => new AciPaymentGateway($this->httpClient),
             default => throw (new PaymentValidationException())->setViolations(['name' => 'Invalid payment gateway.']),
         };
     }

@@ -45,6 +45,13 @@ or
 docker-compose exec payment_api_php php vendor/bin/codecept run --steps
 ```
 
+## PHPStan
+Run phpstan
+
+```bash
+docker-compose exec payment_api_php composer phpstan
+```
+
 ### Features:
 
 - Introduced `PaymentTransaction` entity and associated value objects.

@@ -21,9 +21,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 )]
 class PaymentProcessingCommand extends Command
 {
-    public function __construct(
-        private readonly PaymentProcessingUseCase $paymentProcessingUseCase
-    )
+    public function __construct(private readonly PaymentProcessingUseCase $paymentProcessingUseCase)
     {
         parent::__construct();
     }
