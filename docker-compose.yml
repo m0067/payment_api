@@ -1,0 +1,20 @@
+services:
+
+  payment_api_php:
+    user: dev:dev
+    container_name: payment_api_php
+    build: ./docker_config/php
+    volumes:
+      - ./application:/application
+    working_dir: /application
+    ports:
+      - "10990:9000"
+      - "10910:9010"
+    networks:
+      payment_api:
+        aliases:
+          - payment_api_php
+    command: php -S 0.0.0.0:9010 -t public
+
+networks:
+  payment_api:

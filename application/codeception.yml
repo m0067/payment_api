@@ -1,0 +1,33 @@
+namespace: Tests
+support_namespace: Support
+# suite config
+suites:
+    api:
+        actor: ApiTester
+        path: ./Api
+        modules:
+            enabled:
+                - REST:
+                    url: http://localhost:9010/api
+                    depends: PhpBrowser
+        step_decorators:
+            - \Codeception\Step\AsJson
+
+    functional:
+        actor: FunctionalTester
+        path: ./Functional
+        modules:
+            enabled:
+                - Symfony:
+                      app_path: 'src'
+                      environment: 'test'
+
+paths:
+    tests: tests
+    output: tests/_output
+    data: tests/Support/Data
+    support: tests/Support
+
+settings:
+    shuffle: false
+    lint: true

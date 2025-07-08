@@ -1,0 +1,5 @@
+controllers:
+    resource:
+        path: ../src/Payment/Presentation/Http/Controller/
+        namespace: App\Payment\Presentation\Http\Controller
+    type: attribute
